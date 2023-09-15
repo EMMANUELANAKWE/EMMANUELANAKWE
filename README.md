@@ -28,5 +28,5 @@ It's a thrilling journey of turning code into functional and interactive web ele
 or just want to chat about coding, feel free to reach out to me. Let's learn and grow together!
 
 📫 How to reach me: keneanakwe@gmail.com
-💼 LinkedIn: Emmanuel Anakwe
-
+💼 LinkedIn: https://www.linkedin.com/emmanuelanakwe
+💼 twitter : https://www.twitter.com/kenechrist
