@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Emmanuel Anakwe | Elite Web Developer & Digital Marketer</title>
+
+<meta name="description" content="Elite web developer & digital marketer in Lagos, Abuja & globally. Websites, SEO, ads & branding that bring real business growth.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#ffffff;
+--text:#111;
+--primary:#000;
+}
+
+body.dark{
+--bg:#0f0f0f;
+--text:#fff;
+--primary:#25D366;
+}
+
+body{
+margin:0;
+font-family:Poppins;
+background:var(--bg);
+color:var(--text);
+transition:.3s;
+}
+
+/* HEADER */
+
+header{
+padding:100px 20px;
+text-align:center;
+background:linear-gradient(120deg,#000,#333);
+color:white;
+}
+
+.btn{
+padding:14px 22px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+margin:8px;
+}
+
+.whatsapp{background:#25D366;color:white;}
+.primary{background:black;color:white;}
+
+/* TOGGLE */
+
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
+cursor:pointer;
+background:black;
+color:white;
+padding:10px;
+border-radius:50%;
+}
+
+/* SECTIONS */
+
+section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+background:var(--bg);
+}
+
+/* COUNTERS */
+
+.counter{
+font-size:40px;
+font-weight:800;
+}
+
+/* TESTIMONIALS */
+
+.testimonial{
+display:none;
+text-align:center;
+font-style:italic;
+}
+
+.testimonial.active{
+display:block;
+}
+
+/* CHATBOT */
+
+.chatbot{
+position:fixed;
+bottom:20px;
+right:20px;
+width:260px;
+background:white;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+overflow:hidden;
+font-size:14px;
+}
+
+.chatbot-header{
+background:black;
+color:white;
+padding:10px;
+}
+
+.chatbot-body{
+padding:10px;
+height:200px;
+overflow-y:auto;
+}
+
+.chatbot input{
+width:100%;
+padding:10px;
+border:none;
+border-top:1px solid #ccc;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- DARK MODE -->
+<div class="toggle" onclick="toggleMode()">🌙</div>
+
+<header>
+<h1>Emmanuel Anakwe</h1>
+<p>Elite Website Developer • Digital Marketer • Advertiser</p>
+
+<a class="btn whatsapp" href="https://wa.me/2348061194280">WhatsApp Me</a>
+<a class="btn primary" href="mailto:lincobuilderscompany@gmail.com">Hire Me</a>
+</header>
+
+<section>
+<h2>Services</h2>
+<div class="grid">
+<div class="card">Website Development</div>
+<div class="card">E-commerce Stores</div>
+<div class="card">SEO Ranking</div>
+<div class="card">Paid Ads</div>
+<div class="card">Social Media Marketing</div>
+<div class="card">Branding & Graphics</div>
+</div>
+</section>
+
+<!-- COUNTERS -->
+<section>
+<h2>My Results</h2>
+<div class="grid">
+<div class="card"><div class="counter" data-target="120">0</div> Projects</div>
+<div class="card"><div class="counter" data-target="95">0</div>% Client Satisfaction</div>
+<div class="card"><div class="counter" data-target="300">0</div> Leads Generated</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+<h2>Testimonials</h2>
+
+<div class="testimonial active">"Emmanuel doubled our sales!" — Business Owner</div>
+<div class="testimonial">"Best web developer in Nigeria." — CEO</div>
+<div class="testimonial">"Our ads ROI exploded." — Brand Manager</div>
+
+
+
+</section>
+
+<!-- PAYMENT -->
+<section>
+<h2>Start Your Project</h2>
+<p>Secure your slot with a project deposit.</p>
+
+<a class="btn primary" href="https://paystack.com/pay/demo">Pay Project Deposit</a>
+</section>
+
+<footer>
+<p>© 2026 Emmanuel Anakwe</p>
+<p>Lagos • Abuja • Global Clients</p>
+</footer>
+
+<!-- WHATSAPP LIVE CHAT FLOAT -->
+<a href="https://wa.me/2348061194280" 
+style="position:fixed;bottom:20px;left:20px;background:#25D366;color:white;padding:15px;border-radius:50%;text-decoration:none;font-size:22px;">
+💬
+</a>
+
+<!-- AI CHATBOT -->
+<div class="chatbot">
+<div class="chatbot-header">AI Assistant</div>
+<div class="chatbot-body" id="chat"></div>
+<input placeholder="Ask something..." onkeydown="chatbot(event)">
+</div>
+
+<script>
+
+/* DARK MODE */
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+
+/* COUNTER */
+document.querySelectorAll('.counter').forEach(counter=>{
+let update=()=>{
+let target=+counter.dataset.target;
+let count=+counter.innerText;
+let inc=target/100;
+if(count<target){
+counter.innerText=Math.ceil(count+inc);
+setTimeout(update,30);
+}else{
+counter.innerText=target;
+}
+}
+update();
+});
+
+/* TESTIMONIAL SLIDER */
+let i=0;
+setInterval(()=>{
+let t=document.querySelectorAll('.testimonial');
+t.forEach(e=>e.classList.remove('active'));
+t[i].classList.add('active');
+i=(i+1)%t.length;
+},3000);
+
+/* SIMPLE AI CHATBOT */
+function chatbot(e){
+if(e.key==="Enter"){
+let input=e.target.value;
+let chat=document.getElementById("chat");
+
+let user=`<div>You: ${input}</div>`;
+let reply=`<div>Bot: Please WhatsApp Emmanuel for detailed help 😊</div>`;
+
+chat.innerHTML+=user+reply;
+e.target.value="";
+}
+}
+</script>
+
+</body>
+</html>
