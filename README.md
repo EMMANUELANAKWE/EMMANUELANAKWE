@@ -1,32 +1,31 @@
+# 👨‍💻 Flask E-commerce Developer Portfolio
 
+![Portfolio Preview](preview.png)
 
+**Live Site:** [emmanuelanakwe.github.io](https://emmanuelanakwe.github.io)
 
+## ✨ About the Project
 
-# Hello there! 👋 I'm EMMANUEL ANAKWE
+A bold, energetic portfolio designed to showcase modern **Flask e‑commerce solutions**.  
+Built from scratch with **vanilla HTML, CSS, and JavaScript** – no frameworks, just pure creativity.
 
-## About Me
-I'm a passionate learner and aspiring software developer currently diving into the world of JavaScript and python. 
-I believe in the power of coding to transform ideas into reality. My journey in programming began with CS50's and 
-has led me to explore the exciting realms of abstraction, algorithms, data structures, encapsulation, resource management, 
-security, software engineering, and web development.
+### 🔥 Key Features
+- **Dynamic Hero** with typewriter effect and live code snippet.
+- **Interactive Service Cards** – flip to reveal technical details.
+- **Angled Divider Sections** for a modern, fast‑paced feel.
+- **Custom Cursor** that responds to interactive elements.
+- **Responsive Design** – looks sharp on all devices.
+- **Optimized for Social Sharing** with Open Graph meta tags.
 
-## What I'm Learning
-🌱 I'm currently focused on sharpening my skills in  Languages like C, Python, SQL, and JavaScript . I'm learning about 
-its core concepts, functions, DOM manipulation, and gradually getting my hands dirty with more advanced topics like asynchronous
-programming and APIs.
+### 🛠️ Tech Used
+- HTML5 / CSS3 (Flexbox, Grid, CSS Animations)
+- Vanilla JavaScript (typewriter, custom cursor, scroll reveals)
+- Font Awesome & Google Fonts (Space Mono, Poppins)
 
-## Goals
-🚀 My ultimate goal is to become a proficient full-stack developer. I'm excited about working on projects that not only solve real-world
-problems but also add a touch of creativity and innovation.
+### 📬 Let's Connect
+- **Portfolio:** [emmanuelanakwe.github.io](https://emmanuelanakwe.github.io)
+- **GitHub:** [@EMMANUELANAKWE](https://github.com/EMMANUELANAKWE)
 
-## Current Projects
-🔭 I'm currently working on my Personal Website test out my skill sets, where I'm implementing what I've learned in JavaScript and python to sharpening my skills . 
-It's a thrilling journey of turning code into functional and interactive web elements.
+---
 
-## Let's Connect
-💬 I'm always open to connecting with fellow learners and developers. If you're passionate about C, Python, SQL,JavaScript, web development, 
-or just want to chat about coding, feel free to reach out to me. Let's learn and grow together!
-
-📫 How to reach me: keneanakwe@gmail.com
-💼 LinkedIn: https://www.linkedin.com/emmanuelanakwe
-💼 twitter : https://www.twitter.com/kenechrist
+*Built with ❤️ and a lot of Flask experience.*
