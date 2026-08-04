@@ -1804,15 +1804,50 @@
                 <h2 class="section-title">Let's Build Something Great</h2>
                 <p class="section-desc">Have a project in mind? Drop me a message and I'll get back to you within 24 hours.</p>
                 <div class="contact-wrapper">  <!-- 👈 grid wrapper restored -->
-                    <div class="google-form-container reveal" style="width:100%; max-width:700px; margin:0 auto;">
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdCpTh1Qsay-qXkfqsS5-mwnaRhhz7I3MyIc_hEtTIQyjkFUQ/viewform?embedded=true"
-                                width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0"
-                                style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--neutral-light-gray);">
-                            Loading…
-                        </iframe>
-                    </div>
+                    <section class="section" id="contact" style="background: #fff;">
+    <div class="section-inner">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Build Something Great</h2>
+        <p class="section-desc">Have a project in mind? Drop me a message and I'll get back to you within 24 hours.</p>
+        <div class="contact-wrapper">  <!-- grid wrapper -->
+            <!-- NEW FORM (replaces the Google iframe) -->
+            <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/el/dotolu" method="POST">
+                <!-- FormSubmit customization -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New message from portfolio">
+                <div class="form-group">
+                    <label for="name">YOUR NAME</label>
+                    <input type="text" id="name" name="name" placeholder="John chukwu" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">SERVICE INTEREST</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service...</option>
+                        <option value="flask">Flask Development</option>
+                        <option value="ecommerce">E-commerce Solutions</option>
+                        <option value="api">API Engineering</option>
+                        <option value="security">Security & Performance</option>
+                        <option value="other">Other / Consultation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">YOUR MESSAGE</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+            
+            
+                <!-- ... keep your existing contact cards ... -->
+        
                     
-                    <div class="contact-info-cards">
+                <div class="contact-info-cards">
                         <div class="contact-info-card reveal">
                             <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div>
@@ -1852,7 +1887,8 @@
                 <a href="https://github.com/EMMANUELANAKWE" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                 <a href="https://linkedin.com/in/kenechukwu-anakwe-83475b80" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://x.com/kenechrist" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="mailto:keneanakwe@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+               <a href="https://wa.me/2348061194280" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <p>&copy; 2026 <strong style="color:#fff;">Kenechukwu Emmanuel Anakwe</strong> — Flask E-commerce Specialist. All rights reserved.</p>
             <p style="font-size:0.75rem; margin-top:6px;">Built with <span style="color:var(--secondary);">❤</span> using Flask & modern web tech.</p>
@@ -2061,6 +2097,52 @@
                 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
                 revealElements.forEach(el => revealObserver.observe(el));
+                // ============ CONTACT FORM – FormSubmit ============
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // stop normal redirect
+    const btn = contactForm.querySelector('button');
+    const originalHTML = btn.innerHTML;
+
+    // Show sending state
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-pulse"></i> Sending...';
+    btn.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    fetch('https://formsubmit.co/el/dotolu', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Success message
+            btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message Sent!';
+            btn.style.background = 'var(--accent)';
+            btn.style.boxShadow = '0 6px 24px rgba(40,167,69,0.4)';
+            contactForm.reset();
+        } else {
+            // Error fallback
+            btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error, try again';
+            btn.style.background = 'var(--secondary)';
+            btn.style.boxShadow = '0 6px 24px rgba(220,53,69,0.4)';
+        }
+    })
+    .catch(() => {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Network error';
+        btn.style.background = 'var(--secondary)';
+        btn.style.boxShadow = '0 6px 24px rgba(220,53,69,0.4)';
+    })
+    .finally(() => {
+        // Reset button after 3 seconds
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.background = '';
+            btn.style.boxShadow = '';
+            btn.disabled = false;
+        }, 3000);
+    });
+});
 
                 // ============ SMOOTH SCROLL FOR SAFARI ============
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
